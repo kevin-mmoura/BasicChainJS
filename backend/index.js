@@ -1,11 +1,10 @@
-const Blockchain = require("./src/blockchain/blockchain")
-const Transaction = require("./src/blockchain/transaction")
+const {Blockchain, Transaction} = require("./src/blockchain/blockchain")
 const EC = require("elliptic").ec
 const ec = new EC("secp256k1")
 
 const CONFIG = require("./config.json")
 
-const myKey = ec.keyFromPrivate("36cde1004bc2435cb3c67b4de9d654f626e08077e6392781c866c80b7a0663af")
+const myKey = ec.keyFromPrivate("SUA CHAVE PRIVADA")
 const myWalletAdress = myKey.getPublic("hex")
 
 const tx1 = new Transaction(myWalletAdress, "Pedro", 10)
