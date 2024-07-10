@@ -87,4 +87,4 @@ const chain = new Blockchain(CONFIG.DIFFICULTY, CONFIG.MINING_REWARD)
 console.log(chain.getBalanceOfAdress("Endereço público da carteira"))
 ```
 
-## EM BREVE IREI CRIAR O FRONT END! :)
+- EM BREVE IREI CRIAR O FRONTEND! :)
