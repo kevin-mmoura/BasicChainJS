@@ -1,17 +1,16 @@
-const {Blockchain, Transaction} = require("./src/blockchain/blockchain")
-const EC = require("elliptic").ec
-const ec = new EC("secp256k1")
+const { Blockchain, Transaction } = require("./src/blockchain/blockchain.js");
+const EC = require("elliptic").ec;
+const ec = new EC("secp256k1");
 
-const CONFIG = require("./config.json")
+const chain = new Blockchain();
 
-const myKey = ec.keyFromPrivate("SUA CHAVE PRIVADA")
-const myWalletAdress = myKey.getPublic("hex")
+module.exports = { chain, Transaction, ec };
 
-const tx1 = new Transaction(myWalletAdress, "Pedro", 10)
-tx1.signTransaction(myKey)
+const api = require("./api.js");
 
-const chain = new Blockchain(CONFIG.DIFFICULTY, CONFIG.MINING_REWARD)
+const myKey = ec.genKeyPair();
+const private = myKey.getPrivate("hex");
+const public = myKey.getPublic("hex");
 
-chain.addTransaction(tx1)
-chain.mineBlock(myWalletAdress)
-console.log(chain.getBalanceOfAdress(myWalletAdress))
+console.log(`Private Key: ${private}`);
+console.log(`\nPublic Key: ${public}`);

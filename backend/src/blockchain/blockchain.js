@@ -75,7 +75,7 @@ class Blockchain {
             [SE O HASH NÃO ESTÁ CORRETO]
             [SE O INDEX ESTÁ DIFERENTE (A ORDEM)
             [SE O HASH DO ULTIMO BLOCO ESTA DIFERENTE NO BLOCO ATUAL]]
-            */
+      */
 
       if (!currentBlock.hasValidTransactions()) return false;
       if (currentBlock.hash !== currentBlock.generateHash()) return false;
@@ -86,4 +86,7 @@ class Blockchain {
   }
 }
 
-module.exports = { Blockchain: Blockchain, Transaction: Transaction };
+module.exports = {
+  Blockchain: Blockchain,
+  Transaction: Transaction,
+};

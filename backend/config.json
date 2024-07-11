@@ -1,4 +1,5 @@
 {
-    "MINING_REWARD": 100,
-    "DIFFICULTY": 1
+  "MINING_REWARD": 100,
+  "DIFFICULTY": 1,
+  "PORT": 3000
 }
